@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Version 4.10.0 - 23rd January 2017
 
 - Silence warning.
@@ -2411,6 +2412,15 @@ we hit it regularly.
 - We are always dependent on libusb handling events so use the blocking
 libusb_handle_events in the polling thread and use a bool to know if we should
 continue polling.
+=======
+Version 3.5.1 - 11th October 2013
+
+- Avoid calling get_statline_before on exit to avoid trying to use it on drivers
+in an indeterminate state.
+- Avoid calling get_statline on exit.
+- Drop logging level for failed to connect to stratum to verbose mode only since
+we hit it regularly.
+>>>>>>> origin/3.5
 - Use fractional hashrate return values in bitfury_scanhash to minimise the
 number of times we return 0 based on hashrate so far to further damp out
 displayed hashrate.
@@ -2427,6 +2437,7 @@ as a macro.
 a permanent failure.
 - Use libusb's own error name function instead of hand coding the error names.
 - Limit ms_tdiff to 1 hour as a sanity check.
+<<<<<<< HEAD
 - Enable the usb buffer in avalon driver.
 - Check for async transfer variants of error messages.
 - Remove unused variables.
@@ -2442,6 +2453,11 @@ than retry max.
 - Make the devlock a cglock in usbutils and only grab the write lock for
 fundamental changes allowing us to send and receive transfers concurrently
 without lock contention.
+=======
+- Try switching pools if for some reason we end up with only idle pools and have
+ended up current_pool set to an idle one.
+- Check a pool is stable for >5 mins before switching back to it.
+>>>>>>> origin/3.5
 - Prevent overflows in us_tdiff and ms_tdiff.
 - Change second initialise message on bitfury verbose mode.
 - Submitting an ntime offset nonce needs to be done on a copy of the work
@@ -2452,8 +2468,13 @@ work, cleaning up code in the process.
 ntime value by returning the amount it has ntime rolled to be added.
 - Typo in configure.ac
 - Remove unmaintained broken ztex driver.
+<<<<<<< HEAD
 - Icarus - use a data structure for I/O rather than magic numbers
 - delete old tracked ccan/opt/*.o files
+=======
+- Icarus CMR2 detect FPGA setup
+- Icarus - use a data structure for I/O rather than magic numbers
+>>>>>>> origin/3.5
 - klondike correct cvtKlnToC() temperature calculation
 - klondike - correct 1st reply debug based on define
 - klondike - debug dump structured replies
@@ -2465,7 +2486,10 @@ ntime value by returning the amount it has ntime rolled to be added.
 - klondike use a memcpy
 - klondike fix bracket tabs indenting
 - api.c missing Klondike from ASIC list
+<<<<<<< HEAD
 - Klondike update code to current git
+=======
+>>>>>>> origin/3.5
 - Add 2nd CMR to 01-cgminer.rules
 - Add Klondike to 01-cgminer.rules
 - Klondike to main directory
@@ -2483,6 +2507,7 @@ ntime value by returning the amount it has ntime rolled to be added.
 - update firmware and driver, create new cgminer fork
 - update klondike driver
 - add cgminer driver file as-is
+<<<<<<< HEAD
 - Add API output displaying USB cancellations.
 - Store statistics on how often we have to cancel async bulk transfers and add a
 debug message whenever we do.
@@ -2497,6 +2522,10 @@ async functions.
 timers and cancelling transfers that take too long.
 - Add libusb error warning message when significant error occurs.
 - Icarus CMR2 detect FPGA setup
+=======
+- Get statistics on how long usb reads and writes wait on the devlock.
+- Display stats regarding locking delays in API.
+>>>>>>> origin/3.5
 - Disable bitfury device thread on it disappearing.
 
 
